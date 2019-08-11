@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    hello
+    <!-- url이 news면 <NewsView></NewsView>, ask면 ~, jobs면 ~ -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    fetchData() {
-      console.log('test');
-    }
-  }
+
 }
 </script>
 
