@@ -1,23 +1,25 @@
 <template>
   <div id="app">
     <!-- url이 news면 <NewsView></NewsView>, ask면 ~, jobs면 ~ -->
+    <!-- 템플릿명 작성시에는 카멜케이스말고 케밥케이스로 작성하기 권장 -->
+    <tool-bar></tool-bar> 
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
+import ToolBar from './components/Toolbar';
 
+export default {
+  components: {
+    ToolBar,
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  padding: 0;
+  margin: 0;
 }
 </style>
