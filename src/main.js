@@ -3,7 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 // import VueRouter from 'vue-router' 
 // router는 router폴더안에다가 정리하기
-import { router } from './router/index'
+import { router } from './routes/index'
 
 Vue.config.productionTip = false
 
