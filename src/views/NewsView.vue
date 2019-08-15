@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { fetchNewsList } from '../api/index.js';
 
 export default {
     data() {
@@ -14,11 +14,14 @@ export default {
             users: []
         }
     },
+    // lifecycle hook
+    // created: 컴포넌트가 생성되자마자 실행되는 함수
+    // 데이터요청은 보통 created, beforeMount 두 함수에서
     created() {
         var vm = this;
-        axios.get('https://api.hnpwa.com/v0/news/1.json')
+        fetchNewsList()
         .then(function(response) {
-            console.log(response);
+            // console.log(response);
             // this.users = response.data;  // calback 함수이기때문에 this가 바뀜
             vm.users = response.data;
         })
