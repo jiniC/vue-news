@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import { fetchNewsList } from '../api/index.js';
-
 export default {
     // lifecycle hook
     // created: 컴포넌트가 생성되자마자 실행되는 함수
