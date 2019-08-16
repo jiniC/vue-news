@@ -15,11 +15,11 @@ export default {
     },
     created() {
         fetchAskList()
-        .then((response)=> {
-            this.ask = response.data;
+        .then((res)=> {
+            this.ask = res.data;
         })
-        .catch(()=> {
-            console.log(error);
+        .catch((err)=> {
+            console.log(err);
         })
     }
 }

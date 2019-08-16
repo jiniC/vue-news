@@ -4,19 +4,31 @@ import App from './App.vue'
 // import VueRouter from 'vue-router' 
 // router는 router폴더안에다가 정리하기
 import { router } from './routes/index'
+import { store } from './store/index';
 
 Vue.config.productionTip = false
 
+// router
 // Vue.use(VueRouter);
-
 // const router = new VueRouter({
 //   routes: [
 
 //   ]
 // })
 
+// store
+// routes, api 폴더처럼 store폴더만들어줌
+// new Vuex.Store({
+//   state,
+//   getters,
+//   mutations,
+//   actions,
+// })
+
+
 new Vue({
   render: h => h(App),
   // router: router, => router로 축약 가능
-  router
+  router,
+  store,
 }).$mount('#app')

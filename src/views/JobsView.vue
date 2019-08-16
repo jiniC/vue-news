@@ -19,8 +19,8 @@ export default {
             // console.log(response);
             this.jobs = res.data;
         })
-        .catch(() => {
-            console.log(error);
+        .catch((err) => {
+            console.log(err);
         })
     }
 }
