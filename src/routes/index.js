@@ -7,6 +7,7 @@ import JobsView from '../views/JobsView.vue';
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  // url에서 #삭제
   mode: 'history',
   routes: [
       {
