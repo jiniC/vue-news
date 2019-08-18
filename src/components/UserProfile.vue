@@ -5,12 +5,12 @@
             <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-            <div>{{ userInfo.id }}</div>
+            <div>{{ info.id }}</div>
             <!-- <router-link :to="`/user/${userInfo.id}`">
                 {{ userInfo.id }}
             </router-link> -->
             <div class="time">
-                {{ userInfo.created }}
+                {{ info.created }}
             </div>
         </div>
     </div>
@@ -18,11 +18,8 @@
 
 <script>
 export default {
-    // 첫 번째 방법: UserProfile에서 state로 데이터에 접근
-    computed: {
-        userInfo() {
-            return this.$store.state.user;
-        }
+    props: {
+        info: Object
     },
 }
 </script>
