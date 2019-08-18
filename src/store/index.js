@@ -10,7 +10,8 @@ export const store = new Vuex.Store({
         news: [],
         jobs: [],
         ask: [],
-        user: [],
+        user: {},
+        item: [],
     },
     // getters: computed와 동일한데 다만 store에있는 것
     getters: {

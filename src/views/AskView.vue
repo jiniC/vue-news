@@ -1,7 +1,10 @@
 <template>
     <div>
          <p v-for="item in fetchedAsk">
-            <a v-bind:href="item.url">{{ item.title }}</a>
+             <!-- 라우터에 적어둔 경로(path: '/item/:id')대로 똑같이해주어야함 item?id=20724592 X -->
+             <router-link v-bind:to="`item/${item.id}`">
+                {{ item.title }}
+             </router-link>
             <small>  {{ item.time_ago }} by {{ item.user }}</small>
         </p>
     </div>
