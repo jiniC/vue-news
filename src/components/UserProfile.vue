@@ -5,12 +5,18 @@
             <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-            <div>{{ info.id }}</div>
-            <!-- <router-link :to="`/user/${userInfo.id}`">
-                {{ userInfo.id }}
-            </router-link> -->
+            <!-- <div>username: {{ info.id }}</div> -->
+            <!-- 페이지마다 접근하는 속성이 달라서 문제가 생김(ItemView는 info.user, UserView는 info.id 였음) => slot 이용해서 해결 -->
+            <slot name="username">
+                <!-- 상위 컴포넌트(UserView, ItemView)에서 정의할 영역 -->
+            </slot>
             <div class="time">
-                {{ info.created }}
+                <!-- time: {{ info.created }} -->
+                <slot name="time">
+                    <!-- 상위 컴포넌트(UserView, ItemView)에서 정의할 영역 -->
+                </slot>
+                <slot name="karma">
+                </slot>
             </div>
         </div>
     </div>
