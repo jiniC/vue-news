@@ -24,6 +24,17 @@ body {
   padding: 0;
   margin: 0;
 }
+a {
+  color: #35495e;
+  text-decoration: none;
+}
+a:hover {
+  color: #42b883;
+  text-decoration: underline;
+}
+a.router-link-exact-active {
+  text-decoration: underline;
+}
 /* https://router.vuejs.org/guide/advanced/transitions.html#per-route-transition */
 /* https://vuejs.org/v2/guide/transitions.html */
 .page-enter-active, .page-leave-active {
