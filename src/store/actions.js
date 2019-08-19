@@ -6,6 +6,7 @@ export default {
             .then((res) => {
                 // mutation에 데이터 넘김
                 context.commit('SET_NEWS', res.data);
+                return res;
             })
             .catch((err) => {
                 console.log(err);

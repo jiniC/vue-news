@@ -6,15 +6,41 @@
     <transition name="page">
       <router-view></router-view>
     </transition>
+    <spinner :loading="loadingStatus"></spinner>
   </div>
 </template>
 
 <script>
 import ToolBar from './components/Toolbar';
+import Spinner from './components/Spinner';
+import bus from './utils/bus.js';
 
 export default {
   components: {
     ToolBar,
+    Spinner,
+  },
+  data() {
+    return {
+      loadingStatus: false,
+    };
+  },
+  methods: {
+    startSpinner() {
+      this.loadingStatus = true;
+    },
+    endSpinner() {
+      this.loadingStatus = false;
+    }
+  },
+  created() {
+    bus.$on('start:spinner', this.startSpinner);
+    bus.$on('end:spinner', this.endSpinner);
+  },
+  // 이벤트객체가 계속 쌓이기때문에 컴포넌트의 역할 끝나고나서는 off해줘야 함
+  beforeDestroy() {
+    bus.$off('start:spinner', this.startSpinner);
+    bus.$off('end:spinner', this.endSpinner);
   }
 }
 </script>
