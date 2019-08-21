@@ -13,6 +13,10 @@ export default {
     components: {
         ListItem,
     },
+    // 인스턴스가 화면에 나타났을 때
+    // mounted() {
+    //     bus.$emit('end:spinner');
+    // }
     mixins: [ListMixin],
     // created() {
     //     bus.$emit('start:spinner');
